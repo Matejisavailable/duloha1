@@ -1,18 +1,30 @@
-<div class="content" role="main">
+ <div class="" style="text-align: center;margin-bottom: 50px">
+  <button (click)="otvorMenu(menu.OSOBY)">Users</button>
+  <button (click)="otvorMenu(menu.KNIHY)">Books</button>
+  <button (click)="otvorMenu(menu.VYPOZICKY)">Borrowed books</button>
+ </div>
 
-  dec: <input [(ngModel)]="desiatkove"(change)="prevodDo2()">
+<div style="margin: 0px 100px 0px 100px;padding: 5%;background-color: antiquewhite">
+  <div *ngIf="aktMenu == menu.OSOBY">
 
-  <br><br>
-  <a>&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;0</a>
-  <br>
+  </div>
 
-  <input type="checkbox">
-  <input type="checkbox">
-  <input type="checkbox">
-  <input type="checkbox">
-  <input type="checkbox">
-  <input type="checkbox">
-  <input type="checkbox">
-  <input type="checkbox">
 
+
+  <div *ngIf="aktMenu == menu.KNIHY">
+
+  </div>
+
+
+
+  <div *ngIf="aktMenu == menu.VYPOZICKY">
+    ID: <input [(ngModel)]="pozicana.id" [disabled]="zakaz"><br>
+    Book: <input [(ngModel)]="pozicana.kniha" [disabled]="zakaz"><br>
+    User: <input [(ngModel)]="pozicana.zakaznik" [disabled]="zakaz"><br>
+    <button (click)="pridajP()">Pridaj</button>
+    <h2>ZOZNAM</h2>
+    <div *ngFor="let p of pozicane">
+     {{p.id}} {{p.kniha}} {{p.zakakznik}};
+    </div>
+  </div>
 </div>
