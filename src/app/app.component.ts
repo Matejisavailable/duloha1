@@ -25,4 +25,8 @@ export class AppComponent {
   pridajP(){
     this.pozicane.push({id:this.pozicana.id, kniha:this.pozicana.kniha, zakakznik:this.pozicana.zakaznik});
   }
+
+  pridajO(){
+    this.osoby.push({id:this.osoba.id, meno:this.osoba.meno, kontakt:this.osoba.kontakt});
+  }
 }

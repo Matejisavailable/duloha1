@@ -5,8 +5,16 @@
  </div>
 
 <div style="margin: 0 100px 0 100px;padding: 5%;">
+
   <div *ngIf="aktMenu == menu.OSOBY">
-    <h2>Users</h2>
+    ID: <input [(ngModel)]="osoba.id" [disabled]="zakaz"><br>
+    Name: <input [(ngModel)]="osoba.meno" [disabled]="zakaz"><br>
+    Contact: <input [(ngModel)]="osoba.kontakt" [disabled]="zakaz"><br>
+    <button (click)="pridajO()">Pridaj</button>
+    <h2>ZOZNAM</h2>
+    <div *ngFor="let o of osoby">
+      {{o.id}} {{o.meno}} {{o.kontakt}};
+    </div>
   </div>
 
 
