@@ -25,6 +25,9 @@ export class AppComponent {
   pridajP(){
     this.pozicane.push({id:this.pozicana.id, kniha:this.pozicana.kniha, zakakznik:this.pozicana.zakaznik});
   }
+  pridajK(){
+    this.knihy.push({id:this.kniha.id, meno:this.kniha.meno, autor:this.kniha.autor});
+  }
 
   pridajO(){
     this.osoby.push({id:this.osoba.id, meno:this.osoba.meno, kontakt:this.osoba.kontakt});

@@ -20,10 +20,16 @@
 
 
   <div *ngIf="aktMenu == menu.KNIHY">
-    <h2>Knihy</h2>
+    ID: <input [(ngModel)]="kniha.id" [disabled]="zakaz"><br>
+    Name: <input [(ngModel)]="kniha.meno" [disabled]="zakaz"><br>
+    Author: <input [(ngModel)]="kniha.autor" [disabled]="zakaz"><br>
+    Available: <input [(ngModel)]="kniha.dostupna" [disabled]="zakaz"><br>
+    <button (click)="pridajK()">Pridaj</button>
+    <h2>ZOZNAM</h2>
+    <div *ngFor="let k of knihy">
+      {{k.id}} {{k.meno}} {{k.autor}} {{k.dostupna}};
+    </div>
   </div>
-
-
 
   <div *ngIf="aktMenu == menu.VYPOZICKY">
     ID: <input [(ngModel)]="pozicana.id" [disabled]="zakaz"><br>
