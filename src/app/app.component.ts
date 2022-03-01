@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
+enum MENU {OSOBY,KNIHY,VYPOZICKY}
 
 @Component({
   selector: 'app-root',
@@ -6,50 +8,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'duloha1';
-  desiatkove = 0;
-  i = 0;
-  pom = 1;
 
-  bity: boolean[] = [false, false, false, false, false, false, false, false];
-
-  public prevodDo2() {
-    let dvojkove = ((this.desiatkove >>> 0).toString(2)).padStart(8, '0');
-    for (let i = 0; i < dvojkove.length; i++){
-      if (i < dvojkove.length && dvojkove[i] == '1') {
-        this.bity[7-i] = true;
-      }else{
-        this.bity[7-i] = false;
-      }
-    }
-
-/*
-  let index = this.dvojkove.length;
-  var pole:number[] = new Array(index);
-  var pole_pom:number[] = new Array(index);
-  let pom = 1;
-  for (let i = 0; i < this.dvojkove.length; i++){
-    var str = this.dvojkove;
-    var sliced = str.slice(index-1,index);
-    pole[i] = Number(sliced);
-    pole_pom[index-1] = pole[i];
-
-
-    pom++;
-    index--;
+  osoba = {id: '1',meno:'ADAM HUDEC', kontakt:'094242424'};
+  kniha = {id: '1',meno: 'Silmarilion', autor: 'J.R.R Tolkien', dostupna:"Ano"};
+  pozicana = {id:'1', kniha:'Silmarilion',zakaznik:'ADAM HUDEC'};
+  zakaz = false;
+  osoby:any = [];
+  knihy:any = [];
+  pozicane:any = [];
+  menu = MENU;
+  aktMenu: MENU = MENU.OSOBY;
+  otvorMenu(m:MENU){
+    this.aktMenu = m;
   }
-  for (let i = 0; i < this.dvojkove.length; i++){
-    console.log('nastavujem ' + index);
-    if( pole_pom[i]==1){
-      this.bity[i] = true;
-    }else{
-      this.bity[i] = false;
-    }
 
+  pridajP(){
+    this.pozicane.push({id:this.pozicana.id, kniha:this.pozicana.kniha, zakakznik:this.pozicana.zakaznik});
   }
-  */
-  //alert(pole_pom);
-}
 
-
+  pridajO(){
+    this.osoby.push({id:this.osoba.id, meno:this.osoba.meno, kontakt:this.osoba.kontakt});
+  }
 }

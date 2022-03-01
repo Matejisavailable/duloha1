@@ -1,18 +1,38 @@
-<div class="content" role="main">
+ <div class="" style="text-align: center;margin-bottom: 50px">
+  <button (click)="otvorMenu(menu.OSOBY)">Users</button>
+  <button (click)="otvorMenu(menu.KNIHY)">Books</button>
+  <button (click)="otvorMenu(menu.VYPOZICKY)">Borrowed books</button>
+ </div>
 
-  dec: <input [(ngModel)]="desiatkove"(change)="prevodDo2()">
+<div style="margin: 0 100px 0 100px;padding: 5%;">
 
-  <br><br>
-  <a>&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0</a>
-  <br>
+  <div *ngIf="aktMenu == menu.OSOBY">
+    ID: <input [(ngModel)]="osoba.id" [disabled]="zakaz"><br>
+    Name: <input [(ngModel)]="osoba.meno" [disabled]="zakaz"><br>
+    Contact: <input [(ngModel)]="osoba.kontakt" [disabled]="zakaz"><br>
+    <button (click)="pridajO()">Pridaj</button>
+    <h2>ZOZNAM</h2>
+    <div *ngFor="let o of osoby">
+      {{o.id}} {{o.meno}} {{o.kontakt}};
+    </div>
+  </div>
 
-  <input type="checkbox" [(ngModel)]="bity[7]">
-  <input type="checkbox" [(ngModel)]="bity[6]">
-  <input type="checkbox" [(ngModel)]="bity[5]">
-  <input type="checkbox" [(ngModel)]="bity[4]">
-  <input type="checkbox" [(ngModel)]="bity[3]">
-  <input type="checkbox" [(ngModel)]="bity[2]">
-  <input type="checkbox" [(ngModel)]="bity[1]">
-  <input type="checkbox" [(ngModel)]="bity[0]">
 
+
+  <div *ngIf="aktMenu == menu.KNIHY">
+    <h2>Knihy</h2>
+  </div>
+
+
+
+  <div *ngIf="aktMenu == menu.VYPOZICKY">
+    ID: <input [(ngModel)]="pozicana.id" [disabled]="zakaz"><br>
+    Book: <input [(ngModel)]="pozicana.kniha" [disabled]="zakaz"><br>
+    User: <input [(ngModel)]="pozicana.zakaznik" [disabled]="zakaz"><br>
+    <button (click)="pridajP()">Pridaj</button>
+    <h2>ZOZNAM</h2>
+    <div *ngFor="let p of pozicane">
+     {{p.id}} {{p.kniha}} {{p.zakakznik}};
+    </div>
+  </div>
 </div>
