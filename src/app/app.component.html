@@ -4,9 +4,11 @@
   <button (click)="otvorMenu(menu.VYPOZICKY)">Borrowed books</button>
  </div>
 
+ <router-outlet></router-outlet>
+
 <div style="margin: 0 100px 0 100px;padding: 5%;">
 
-  <div *ngIf="aktMenu == menu.OSOBY">
+  <!--<div *ngIf="aktMenu == menu.OSOBY">
     ID: <input [(ngModel)]="osoba.id" [disabled]="zakaz"><br>
     Name: <input [(ngModel)]="osoba.meno" [disabled]="zakaz"><br>
     Contact: <input [(ngModel)]="osoba.kontakt" [disabled]="zakaz"><br>
@@ -16,7 +18,7 @@
       {{o.id}} {{o.meno}} {{o.kontakt}};
     </div>
   </div>
-
+-->
 
 
   <div *ngIf="aktMenu == menu.KNIHY">

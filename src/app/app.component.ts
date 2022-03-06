@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 enum MENU {OSOBY,KNIHY,VYPOZICKY}
 
 @Component({
@@ -9,17 +10,21 @@ enum MENU {OSOBY,KNIHY,VYPOZICKY}
 })
 export class AppComponent {
 
-  osoba = {id: '1',meno:'ADAM HUDEC', kontakt:'094242424'};
   kniha = {id: '1',meno: 'Silmarilion', autor: 'J.R.R Tolkien', dostupna:"Ano"};
   pozicana = {id:'1', kniha:'Silmarilion',zakaznik:'ADAM HUDEC'};
   zakaz = false;
-  osoby:any = [];
   knihy:any = [];
   pozicane:any = [];
   menu = MENU;
   aktMenu: MENU = MENU.OSOBY;
+
+  constructor(private router: Router) {
+  }
+
   otvorMenu(m:MENU){
-    this.aktMenu = m;
+    if (m == MENU.OSOBY){
+      this.router.navigate(["/user"])
+    }
   }
 
   pridajP(){
@@ -29,7 +34,8 @@ export class AppComponent {
     this.knihy.push({id:this.kniha.id, meno:this.kniha.meno, autor:this.kniha.autor});
   }
 
-  pridajO(){
+
+  /**pridajO(){
     this.osoby.push({id:this.osoba.id, meno:this.osoba.meno, kontakt:this.osoba.kontakt});
-  }
+  }*/
 }
