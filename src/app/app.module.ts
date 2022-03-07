@@ -8,13 +8,19 @@ import { UserWebComponent } from './user-web/user-web.component';
 import { UserListComponent } from './user-list/user-list.component';
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-roouting.module";
+import { BorrowedFormComponent } from './borrowed-form/borrowed-form.component';
+import { BorrowedListComponent } from './borrowed-list/borrowed-list.component';
+import { BorrowedWebComponent } from './borrowed-web/borrowed-web.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserFormComponent,
     UserWebComponent,
-    UserListComponent
+    UserListComponent,
+    BorrowedFormComponent,
+    BorrowedListComponent,
+    BorrowedWebComponent
   ],
     imports: [
         BrowserModule,
