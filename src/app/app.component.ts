@@ -10,10 +10,10 @@ enum MENU {OSOBY,KNIHY,VYPOZICKY}
 })
 export class AppComponent {
 
-  kniha = {id: '1',meno: 'Silmarilion', autor: 'J.R.R Tolkien', dostupna:"Ano"};
+
   pozicana = {id:'1', kniha:'Silmarilion',zakaznik:'ADAM HUDEC'};
   zakaz = false;
-  knihy:any = [];
+
   pozicane:any = [];
   menu = MENU;
   aktMenu: MENU = MENU.OSOBY;
@@ -25,14 +25,20 @@ export class AppComponent {
     if (m == MENU.OSOBY){
       this.router.navigate(["/user"])
     }
+    if (m == MENU.KNIHY){
+      this.router.navigate(["/books"])
+    }
+    if (m == MENU.VYPOZICKY){
+      this.router.navigate(["/borrowed"])
+    }
   }
 
   pridajP(){
     this.pozicane.push({id:this.pozicana.id, kniha:this.pozicana.kniha, zakakznik:this.pozicana.zakaznik});
   }
-  pridajK(){
+  /**pridajK(){
     this.knihy.push({id:this.kniha.id, meno:this.kniha.meno, autor:this.kniha.autor});
-  }
+  }*/
 
 
   /**pridajO(){

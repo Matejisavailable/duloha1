@@ -8,13 +8,19 @@ import { UserWebComponent } from './user-web/user-web.component';
 import { UserListComponent } from './user-list/user-list.component';
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-roouting.module";
+import { BookFormComponent } from './book-form/book-form.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { BookWebComponent } from './book-web/book-web.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserFormComponent,
     UserWebComponent,
-    UserListComponent
+    UserListComponent,
+    BookFormComponent,
+    BookListComponent,
+    BookWebComponent
   ],
     imports: [
         BrowserModule,
