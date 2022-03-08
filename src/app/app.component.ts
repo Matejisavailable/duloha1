@@ -26,7 +26,7 @@ export class AppComponent {
       this.router.navigate(["/user"])
     }
     if (m == MENU.KNIHY){
-      this.router.navigate(["/books"])
+      this.router.navigate(["/book"])
     }
     if (m == MENU.VYPOZICKY){
       this.router.navigate(["/borrowed"])
