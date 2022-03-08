@@ -11,6 +11,9 @@ import {AppRoutingModule} from "./app-roouting.module";
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookWebComponent } from './book-web/book-web.component';
+import { BorrowedFormComponent } from './borrowed-form/borrowed-form.component';
+import { BorrowedListComponent } from './borrowed-list/borrowed-list.component';
+import { BorrowedWebComponent } from './borrowed-web/borrowed-web.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { BookWebComponent } from './book-web/book-web.component';
     UserFormComponent,
     UserWebComponent,
     UserListComponent,
+    BorrowedFormComponent,
+    BorrowedListComponent,
+    BorrowedWebComponent,
     BookFormComponent,
     BookListComponent,
     BookWebComponent
