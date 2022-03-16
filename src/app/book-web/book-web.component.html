@@ -1,2 +1,7 @@
-<app-book-form></app-book-form>
-<app-book-list></app-book-list>
+<app-book-form [book]="knihaNaUpravu"
+               (pridajBook)="pridaj($event)"
+               >
+
+</app-book-form>
+<app-book-list [knihy]="knihy">
+</app-book-list>

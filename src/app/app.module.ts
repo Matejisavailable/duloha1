@@ -14,6 +14,7 @@ import { BookWebComponent } from './book-web/book-web.component';
 import { BorrowedFormComponent } from './borrowed-form/borrowed-form.component';
 import { BorrowedListComponent } from './borrowed-list/borrowed-list.component';
 import { BorrowedWebComponent } from './borrowed-web/borrowed-web.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BorrowedWebComponent } from './borrowed-web/borrowed-web.component';
         FormsModule,
         RouterModule,
         AppRoutingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

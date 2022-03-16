@@ -1,4 +1,26 @@
-<h2>ZOZNAM</h2>
-<div *ngFor="let b of borrows">
-  {{b.id}} {{b.book}} {{b.user}};
+<!--<h2>ZOZNAM</h2>
+<div *ngFor="!borrows || borrows?.length === 0">
+  Zoznam výpožičiek je prázdny.
 </div>
+
+<table class="table" *ngIf="borrows?.length > 0">
+  <thead>
+  <tr>
+    <th>Kniha</th>
+    <th>Používateľ</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let b of borrows">
+    <td>{{ b.book }}</td>
+    <td>{{ b.user }}</td>
+    <td>
+      <button (click)="uprav(b)">Upraviť</button>
+      <button (click)="zmaz(b)">Zmazať</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+-->

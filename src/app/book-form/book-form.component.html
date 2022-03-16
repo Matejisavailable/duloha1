@@ -1,4 +1,22 @@
-ID: <input [(ngModel)]="book.id"><br>
-Name: <input [(ngModel)]="book.name"><br>
-Author: <input [(ngModel)]="book.author"><br>
-Available: <input [(ngModel)]="book.available"><br>
+<h1>Knihy formular</h1>
+
+<form [formGroup]="form">
+
+  <label>Nazov:
+    <input formControlName="nazov">
+  </label>
+  <br>
+
+  <label>Autor:
+    <input formControlName="autor">
+  </label>
+  <br>
+  <label>Dostupna:
+    <input formControlName="dostupna">
+  </label>
+  <br>
+
+  <button (click)="pridaj()" *ngIf="form.value.id === null">Add</button>
+  <button (click)="zrus()">Cancel</button>
+
+</form>

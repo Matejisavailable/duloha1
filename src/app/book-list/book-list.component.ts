@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Book} from "../models/book-model";
 
 @Component({
@@ -7,10 +7,7 @@ import {Book} from "../models/book-model";
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent{
-
-  books: Book[] = [];
-  constructor() { }
-
-
+  @Input()
+  knihy: Book[] = [];
 
 }

@@ -1,12 +1,12 @@
 export class Borrowed{
-  id:string;
+  id?:string;
   book:string;
   user:string;
 
 
-  constructor(id: string, book: string, user: string) {
-    this.id = id;
-    this.book = book;
-    this.user = user;
+  constructor(borrowing: Borrowed) {
+    this.id = borrowing.id;
+    this.book = borrowing.book;
+    this.user = borrowing.user;
   }
 }
