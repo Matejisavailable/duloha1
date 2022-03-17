@@ -10,4 +10,12 @@ export class BookListComponent{
   @Input()
   knihy: Book[] = [];
 
+  @Output()
+  zmazKnihu: EventEmitter<Book> = new EventEmitter<Book>();
+
+  constructor() { }
+
+  zmaz(book: Book): void{
+    this.zmazKnihu.emit(book);
+  }
 }
