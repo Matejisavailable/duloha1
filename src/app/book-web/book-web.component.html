@@ -3,5 +3,7 @@
                >
 
 </app-book-form>
-<app-book-list [knihy]="knihy">
+<app-book-list [knihy]="knihy"
+                (upravKnihu)="uprav($event)"
+>
 </app-book-list>

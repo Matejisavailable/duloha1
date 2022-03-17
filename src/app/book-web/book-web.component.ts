@@ -16,7 +16,7 @@ export class BookWebComponent{
     this.knihy.push(b)
   }
 
-  uprav(b: Book){
+  uprav(b: Book): void{
     const index = this.knihy.findIndex(knihyArray => knihyArray.id === b.id);
     if (index !== -1){
       this.knihy[index] = b;
