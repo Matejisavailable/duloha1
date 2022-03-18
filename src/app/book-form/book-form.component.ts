@@ -17,7 +17,6 @@ export class BookFormComponent{
   }
   @Output()
   pridajBook = new EventEmitter<Book>();
-  @Output()
   form!: FormGroup;
   constructor() {
     this.vytvorForm();
@@ -42,7 +41,6 @@ export class BookFormComponent{
     this.form.reset();
   }
   public zrus(): void{
-    this.book = undefined;
     this.form.reset();
   }
 }
