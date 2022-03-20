@@ -18,6 +18,8 @@ export class BookFormComponent{
   @Output()
   pridajBook = new EventEmitter<Book>();
   @Output()
+  upravBook = new EventEmitter<Book>();
+
   form!: FormGroup;
   constructor() {
     this.vytvorForm();
@@ -41,6 +43,12 @@ export class BookFormComponent{
     this.pridajBook.emit({id:Math.random().toString(),name:this.form.value.nazov,author:this.form.value.autor,available:this.form.value.dostupna});
     this.form.reset();
   }
+
+  public uprav(): void {
+    this.upravBook.emit(this.form.value);
+    this.form.reset();
+  }
+
   public zrus(): void{
     this.book = undefined;
     this.form.reset();

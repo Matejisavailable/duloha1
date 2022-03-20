@@ -12,7 +12,7 @@ export class BookWebComponent{
 
   knihaNaUpravu?: Book;
 
-  pridaj(b: Book){
+  pridaj(b: Book): void{
     this.knihy.push(b)
   }
 
@@ -23,8 +23,8 @@ export class BookWebComponent{
     }
   }
 
-  upravZoZoznamu(knihy: Book): void{
-    this.knihaNaUpravu = knihy;
+  upravZoZoznamu(b: Book): void{
+    this.knihaNaUpravu = b;
   }
 
   zmaz(knihaId: string){

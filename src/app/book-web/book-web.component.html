@@ -1,9 +1,10 @@
 <app-book-form [book]="knihaNaUpravu"
                (pridajBook)="pridaj($event)"
+               (upravBook)="uprav($event)"
                >
 
 </app-book-form>
 <app-book-list [knihy]="knihy"
-                (upravKnihu)="uprav($event)"
+               (upravBook)="upravZoZoznamu($event)"
 >
 </app-book-list>
