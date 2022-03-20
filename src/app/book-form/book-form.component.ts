@@ -50,7 +50,6 @@ export class BookFormComponent{
   }
 
   public zrus(): void{
-    this.book = undefined;
     this.form.reset();
   }
 }

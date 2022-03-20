@@ -1,13 +1,12 @@
 export class User{
 
-  id: string;
-  name: string;
-  contact: string;
+  id?: string;
+  meno: string;
+  priezvisko: string;
 
-
-  constructor(id: string, name: string, contact: string) {
-    this.id = id;
-    this.name = name;
-    this.contact = contact;
+  constructor(osoba: User) {
+    this.id = osoba.id;
+    this.meno = osoba.meno;
+    this.priezvisko = osoba.priezvisko;
   }
 }

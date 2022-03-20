@@ -1,3 +1,19 @@
-ID: <input [(ngModel)]="user.id"><br>
-Name: <input [(ngModel)]="user.name"><br>
-Contact: <input [(ngModel)]="user.contact"><br>
+<h1>Osoby - formular</h1>
+
+<form [formGroup]="form">
+
+  <label>Meno:
+    <input formControlName="meno">
+  </label>
+  <br>
+
+  <label>Priezvisko:
+    <input formControlName="priezvisko">
+  </label>
+  <br>
+
+  <button (click)="pridaj()" *ngIf="form.value.id === null">pridaj</button>
+  <button (click)="uprav()" *ngIf="form.value.id !== null">uprav</button>
+  <button (click)="zrus()">zrus</button>
+
+</form>

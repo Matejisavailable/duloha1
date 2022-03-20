@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {User} from "../models/user-model";
 
 @Component({
@@ -8,9 +8,22 @@ import {User} from "../models/user-model";
 })
 export class UserListComponent{
 
-  users: User[] = [];
+  @Input()
+  osoby: User[] = [];
 
-  constructor() { }
+  @Output()
+  upravOsobu: EventEmitter<User> = new EventEmitter<User>();
+
+  @Output()
+  zmazOsobu: EventEmitter<User> = new EventEmitter<User>();
+
+  uprav(osoba: User): void {
+    this.upravOsobu.emit(osoba);
+  }
+
+  zmaz(osoba: User): void {
+    this.zmazOsobu.emit(osoba);
+  }
 
 
 

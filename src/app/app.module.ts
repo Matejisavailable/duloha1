@@ -16,6 +16,8 @@ import { BorrowedListComponent } from './borrowed-list/borrowed-list.component';
 import { BorrowedWebComponent } from './borrowed-web/borrowed-web.component';
 import {HttpClientModule} from "@angular/common/http";
 
+// @ts-ignore
+
 @NgModule({
   declarations: [
     AppComponent,

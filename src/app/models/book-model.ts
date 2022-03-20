@@ -2,7 +2,7 @@ export class Book{
   id?:string;
   name:string;
   author:string;
-  available:number;
+  available:string;
 
 
   constructor(book: Book) {

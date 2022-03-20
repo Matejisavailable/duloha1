@@ -1,11 +1,8 @@
-<app-book-form [book]="knihaNaUpravu"
-               (pridajBook)="pridaj($event)"
-               (upravBook)="uprav($event)"
-               >
-
-</app-book-form>
-<app-book-list [knihy]="knihy"
-               (zmazKnihu)="zmaz($event)"
-               (upravBook)="upravZoZoznamu($event)"
->
-</app-book-list>
+<app-book-form
+  [book]="knihaNaUpravu"
+  (pridajBook)="pridaj($event)"
+  (upravBook)="uprav($event)"></app-book-form>
+<app-book-list
+  [knihy]="knihy"
+  (zmazKnihu)="zmaz($event)"
+  (upravBook)="upravZoZoznamu($event)"></app-book-list>

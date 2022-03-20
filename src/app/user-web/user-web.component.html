@@ -1,2 +1,8 @@
-<app-user-form></app-user-form>
-<app-user-list></app-user-list>
+<app-user-form
+    [osoba]="osobaNaUpravu"
+    (pridajOsobu)="pridaj($event)"
+    (upravOsobu)="uprav($event)"></app-user-form>
+<app-user-list
+    [osoby]="osoby"
+    (upravOsobu)="upravZoZoznamu($event)"
+    (zmazOsobu)="zmazZoZoznamu($event)"></app-user-list>

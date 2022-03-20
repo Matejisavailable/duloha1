@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table" *ngIf="knihy.length > 0">
 <thead>
 <tr>
   <th>Nazov</th>
@@ -8,11 +8,11 @@
 </thead>
 <tbody>
 <tr *ngFor="let k of knihy">
-  <td>{{k.name}}</td>
-  <td>{{k.author}}</td>
-  <td>{{k.available}}</td>
+  <td>{{ k.name }}</td>
+  <td>{{ k.author }}</td>
+  <td>{{ k.available }}</td>
   <td>
-    <button (click)="zmaz(k)">ZMAZAŤ</button>
+    <button (click)="zmaz(k)">Delete</button>
     <button (click)="uprav(k)">Change</button>
   </td>
 </tr>

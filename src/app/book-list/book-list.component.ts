@@ -13,12 +13,12 @@ export class BookListComponent{
   @Output()
   upravBook: EventEmitter<Book> = new EventEmitter<Book>();
 
-    uprav(book: Book): void{
-      this.upravBook.emit(book);
-    }
-
   @Output()
   zmazKnihu: EventEmitter<Book> = new EventEmitter<Book>();
+
+  uprav(book: Book): void{
+    this.upravBook.emit(book);
+  }
 
   zmaz(book: Book): void{
     this.zmazKnihu.emit(book);
