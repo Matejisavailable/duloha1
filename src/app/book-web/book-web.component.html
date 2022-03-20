@@ -3,5 +3,7 @@
                >
 
 </app-book-form>
-<app-book-list [knihy]="knihy">
+<app-book-list [knihy]="knihy"
+               (zmazKnihu)="zmaz($event)"
+>
 </app-book-list>

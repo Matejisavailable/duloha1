@@ -27,8 +27,9 @@ export class BookWebComponent{
     this.knihaNaUpravu = knihy;
   }
 
-  zmaz(knihaId: string){
-    const index = this.knihy.findIndex(knihyArray => knihyArray.id === knihaId);
+  zmaz(b: Book): void{
+    // @ts-ignore
+    const index = this.knihy.findIndex(knihyArray => knihyArray.id === b.id);
     if (index !== -1){
       this.knihy.splice(index, 1);
     }
