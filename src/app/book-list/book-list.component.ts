@@ -11,9 +11,14 @@ export class BookListComponent{
   knihy: Book[] = [];
 
   @Output()
-  zmazKnihu: EventEmitter<Book> = new EventEmitter<Book>();
+  upravBook: EventEmitter<Book> = new EventEmitter<Book>();
 
-  constructor() { }
+    uprav(book: Book): void{
+      this.upravBook.emit(book);
+    }
+
+  @Output()
+  zmazKnihu: EventEmitter<Book> = new EventEmitter<Book>();
 
   zmaz(book: Book): void{
     this.zmazKnihu.emit(book);
