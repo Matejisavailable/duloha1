@@ -17,6 +17,7 @@ export class BookWebComponent{
   }
 
   uprav(b: Book): void{
+    console.log('BOOK:', b)
     const index = this.knihy.findIndex(bArray => bArray.id === b.id);
     if (index !== -1){
       this.knihy[index] = b;

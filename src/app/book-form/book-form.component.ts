@@ -45,7 +45,7 @@ export class BookFormComponent{
   }
 
   public uprav(): void {
-    this.upravBook.emit(this.form.value);
+    this.upravBook.emit({id: this.form.value.id, name:this.form.value.nazov,author:this.form.value.autor,available:this.form.value.dostupna});
     this.form.reset();
   }
 
